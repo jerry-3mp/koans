@@ -11,3 +11,6 @@
 /.idea
 koans.iml
 /out
+
+# Cucumber temp files
+.path_progress
