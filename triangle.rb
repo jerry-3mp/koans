@@ -15,6 +15,9 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  raise TriangleError, 'Sides cannot be less than or equal to zero' if a <= 0 || b <= 0 || c <= 0
+  raise TriangleError, 'Sides cannot add up to less than the remaining side' if a + b <= c || a + c <= b || b + c <= a
+
   if a == b && b == c
     :equilateral
   elsif a == b && b != c || a == c && c != b || b == c && c != a
