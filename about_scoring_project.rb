@@ -31,6 +31,18 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 def score(dice)
   # You need to write this method
+  single_point = { 1 => 100, 5 => 50 }
+  grouped_dice = dice.group_by { |x| x }
+  grouped_dice.reduce(0) do |points, (number, numbers)|
+    count = numbers.length
+    points_gained = 0
+    if numbers.count >= 3
+      points_gained += number * (number == 1 ? 1000 : 100)
+      count -= 3
+    end
+    points_gained += count * single_point[number] if [1, 5].include?(number)
+    points + points_gained
+  end
 end
 
 class AboutScoringProject < Neo::Koan
