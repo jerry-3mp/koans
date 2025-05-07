@@ -124,5 +124,7 @@ class AboutIteration < Neo::Koan
   # When you get to the "AboutSandwichCode" koan, recheck your answer.
   #
   # Maybe it's because it will close the file when you are done with it.
+  # After the "AboutSandwichCode" koan, it turns out that I was correct.
+  # Handle the file in the block, and the open method will close the file for you.
 
 end
